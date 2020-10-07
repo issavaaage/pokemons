@@ -1,0 +1,153 @@
+@import './reset.scss';
+@import './smart-grid.scss';
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap");
+
+body {
+    font-family: 'Oswald', sans-serif;
+}
+
+.wrapper {
+    @include wrapper();
+}
+
+.pokedex-content {
+    @include row-flex();
+
+    .title {
+        @include col();
+        @include size(12);
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        
+
+        h1 {
+            display: inline-block;
+            padding: 10px 85px;
+            font-size: 32px;
+            text-transform: uppercase;
+            border: 1px solid black;
+            border-radius: 6px;
+            background: linear-gradient(to bottom, rgba(220,232,0,1) 0%,rgba(209,0,156,1) 100%);
+        }
+    }
+
+    .cards-list {
+        @include col();
+        @include size(8);
+        @include size-sm(6);
+        display: flex;
+        flex-wrap: wrap;
+
+        .card {
+            @include size(4);
+            @include size-md(6);
+            @include size-sm(12);
+            box-sizing: border-box;
+            margin: 10px;
+            padding: 10px;
+            background-color: #F2F2F2;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+
+            &__name {
+                padding-bottom: 7px;
+
+                p {
+                    font-weight: 700;
+                    text-transform: uppercase;
+                }
+            }
+
+            &__type {
+                display: flex;
+                width: 100%;
+
+                p {
+                    display: block;
+                    width: 50%;
+                    margin: 5px;
+                    padding: 5px 0px 7px 0px;
+                    background-color: red;
+                    border-radius: 5px;
+                    text-align: center;
+                    color: #fff;
+                }
+            }
+        }
+
+        &__controllers {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            button {
+                padding: 5px 15px;
+                margin-right: 10px;
+                margin-left: 10px;
+                background-color: #425EAB;
+                border: none;
+                color: #fff;
+                border-radius: 3px;
+
+                &:hover {
+                    background-color: #5C70A6;
+                }
+            }
+        }
+    }
+
+    .details-card {
+        @include col();
+        @include size(4);
+        @include size-sm(6);
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: 100px;
+
+        .big-card {
+            background-color: #F2F2F2;
+            border-radius: 5px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+
+            &__name {
+                p {
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    padding-bottom: 7px;
+                }
+            }
+
+            &__table {
+                table {
+                    border: 1px solid #000;
+
+                    td {
+                        border: 1px solid #000;
+                        padding: 5px;
+                        text-transform: capitalize;
+                    }
+
+                    tbody {
+                        td {
+                            &:first-child {
+                                color: #ADA7A6;
+                            }
+                            &:last-child {
+                                color: #FF7962;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
